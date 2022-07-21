@@ -1,5 +1,14 @@
 <?php
 
+use App\Http\Controllers\api\AplikasiController;
+use App\Http\Controllers\api\PermissionRoleController;
+use App\Http\Controllers\api\RegionController;
+use App\Http\Controllers\api\RoleUserController;
+use App\Http\Controllers\api\StoreController;
+use App\Http\Controllers\api\UserStoreController;
+use App\Http\Controllers\api\PermissionController;
+use App\Http\Controllers\api\RoleController;
+use App\Http\Controllers\api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,57 +27,57 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/user', [Api\UserController::class, 'index']);
-Route::post('/user/store', [Api\UserController::class, 'store']);
-Route::get('/user/{id}', [Api\UserController::class, 'detail']);
-Route::post('/user/update/{id}', [Api\UserController::class, 'update']);
-Route::delete('/user/destroy/{id}', [Api\UserController::class, 'destroy']);
+Route::get('/user', [UserController::class, 'index']);
+Route::post('/user/store', [UserController::class, 'store']);
+Route::get('/user/{id}', [UserController::class, 'detail']);
+Route::post('/user/update/{id}', [UserController::class, 'update']);
+Route::delete('/user/destroy/{id}', [UserController::class, 'destroy']);
 
-Route::get('/permission', [Api\PermissionController::class, 'index']);
-Route::post('/permission/store', [Api\PermissionController::class, 'store']);
-Route::get('/permission/{id}', [Api\PermissionController::class, 'detail']);
-Route::post('/permission/update/{id}', [Api\PermissionController::class, 'update']);
-Route::delete('/permission/destroy/{id}', [Api\PermissionController::class, 'destroy']);
+Route::get('/permission', [PermissionController::class, 'index']);
+Route::post('/permission/store', [PermissionController::class, 'store']);
+Route::get('/permission/{id}', [PermissionController::class, 'detail']);
+Route::post('/permission/update/{id}', [PermissionController::class, 'update']);
+Route::delete('/permission/destroy/{id}', [PermissionController::class, 'destroy']);
 
-Route::get('/role', [Api\RoleController::class, 'index']);
-Route::post('/role/store', [Api\RoleController::class, 'store']);
-Route::get('/role/{id}', [Api\RoleController::class, 'detail']);
-Route::post('/role/update/{id}', [Api\RoleController::class, 'update']);
-Route::delete('/role/destroy/{id}', [Api\RoleController::class, 'destroy']);
+Route::get('/role', [RoleController::class, 'index']);
+Route::post('/role/store', [RoleController::class, 'store']);
+Route::get('/role/{id}', [RoleController::class, 'detail']);
+Route::post('/role/update/{id}', [RoleController::class, 'update']);
+Route::delete('/role/destroy/{id}', [RoleController::class, 'destroy']);
 
-Route::get('/region', [Api\RegionController::class, 'index']);
-Route::post('/region/store', [Api\RegionController::class, 'store']);
-Route::get('/region/{id}', [Api\RegionController::class, 'detail']);
-Route::post('/region/update/{id}', [Api\RegionController::class, 'update']);
-Route::delete('/region/destroy/{id}', [Api\RegionController::class, 'destroy']);
+Route::get('/region', [RegionController::class, 'index']);
+Route::post('/region/store', [RegionController::class, 'store']);
+Route::get('/region/{id}', [RegionController::class, 'detail']);
+Route::post('/region/update/{id}', [RegionController::class, 'update']);
+Route::delete('/region/destroy/{id}', [RegionController::class, 'destroy']);
 
-Route::get('/store', [Api\StoreController::class, 'index']);
-Route::post('/store/store', [Api\StoreController::class, 'store']);
-Route::get('/store/{id}', [Api\StoreController::class, 'detail']);
-Route::post('/store/update/{id}', [Api\StoreController::class, 'update']);
-Route::delete('/store/destroy/{id}', [Api\StoreController::class, 'destroy']);
+Route::get('/store', [StoreController::class, 'index']);
+Route::post('/store/store', [StoreController::class, 'store']);
+Route::get('/store/{id}', [StoreController::class, 'detail']);
+Route::post('/store/update/{id}', [StoreController::class, 'update']);
+Route::delete('/store/destroy/{id}', [StoreController::class, 'destroy']);
 
-Route::get('/permission_role', [Api\PermissionRoleController::class, 'index']);
-Route::post('/permission_role/store', [Api\PermissionRoleController::class, 'store']);
-Route::get('/permission_role/{permission_id}', [Api\PermissionRoleController::class, 'detail']);
-Route::post('/permission_role/update/{id}', [Api\PermissionRoleController::class, 'update']);
-Route::delete('/permission_role/destroy/{id}', [Api\PermissionRoleController::class, 'destroy']);
+Route::get('/permission_role', [PermissionRoleController::class, 'index']);
+Route::post('/permission_role/store', [PermissionRoleController::class, 'store']);
+Route::get('/permission_role/{permission_id}', [PermissionRoleController::class, 'detail']);
+Route::post('/permission_role/update/{id}', [PermissionRoleController::class, 'update']);
+Route::delete('/permission_role/destroy/{id}', [PermissionRoleController::class, 'destroy']);
 
-Route::get('/role_user', [Api\RoleUserController::class, 'index']);
-Route::post('/role_user/store', [Api\RoleUserController::class, 'store']);
-Route::get('/role_user/{id}', [Api\RoleUserController::class, 'detail']);
-Route::post('/role_user/update/{id}', [Api\RoleUserController::class, 'update']);
-Route::delete('/role_user/destroy/{id}', [Api\RoleUserController::class, 'destroy']);
+Route::get('/role_user', [RoleUserController::class, 'index']);
+Route::post('/role_user/store', [RoleUserController::class, 'store']);
+Route::get('/role_user/{id}', [RoleUserController::class, 'detail']);
+Route::post('/role_user/update/{id}', [RoleUserController::class, 'update']);
+Route::delete('/role_user/destroy/{id}', [RoleUserController::class, 'destroy']);
 
-Route::get('/aplikasi', [Api\AplikasiController::class, 'index']);
-Route::post('/aplikasi/store', [Api\AplikasiController::class, 'store']);
-Route::get('/aplikasi/{id}', [Api\AplikasiController::class, 'detail']);
-Route::post('/aplikasi/update/{id}', [Api\AplikasiController::class, 'update']);
-Route::delete('/aplikasi/destroy/{id}', [Api\AplikasiController::class, 'destroy']);
+Route::get('/aplikasi', [AplikasiController::class, 'index']);
+Route::post('/aplikasi/store', [AplikasiController::class, 'store']);
+Route::get('/aplikasi/{id}', [AplikasiController::class, 'detail']);
+Route::post('/aplikasi/update/{id}', [AplikasiController::class, 'update']);
+Route::delete('/aplikasi/destroy/{id}', [AplikasiController::class, 'destroy']);
 
-Route::get('/user_store', [Api\UserStoreController::class, 'index']);
-Route::post('/user_store/store', [Api\UserStoreController::class, 'store']);
-Route::get('/user_store/{id}', [Api\UserStoreController::class, 'detail']);
-Route::post('/user_store/update/{id}', [Api\UserStoreController::class, 'update']);
-Route::delete('/user_store/destroy/{id}', [Api\UserStoreController::class, 'destroy']);
+Route::get('/user_store', [UserStoreController::class, 'index']);
+Route::post('/user_store/store', [UserStoreController::class, 'store']);
+Route::get('/user_store/{id}', [UserStoreController::class, 'detail']);
+Route::post('/user_store/update/{id}', [UserStoreController::class, 'update']);
+Route::delete('/user_store/destroy/{id}', [UserStoreController::class, 'destroy']);
 

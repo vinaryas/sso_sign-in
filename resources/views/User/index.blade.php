@@ -19,6 +19,14 @@
                 <label>NIK</label>
                 <input type="text" id="nik" name="nik" class="form-control form-control-sm" maxlength="9" required>
             </div>
+             <div class="col-md-6">
+                <label>Store Type</label>
+                <select name="region_id" id="region_id" class="select2 form-control form-control-sm" required>
+                    <option></option>
+                    <option value="{{ 'y'}}"> All Store</option>
+                    <option value="{{ 'n' }}"> Not All Store </option>
+                </select>
+            </div>
             <div class="col-md-6">
                 <label>Password</label>
                 <input type="text" id="password" name="password" class="form-control form-control-sm" required>

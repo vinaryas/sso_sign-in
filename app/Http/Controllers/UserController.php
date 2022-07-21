@@ -26,6 +26,7 @@ class UserController extends Controller
             $data = [
                 'nik'=>$request->nik,
                 'name'=>$request->name,
+                'all_store'=>$request->all_store,
                 'email'=>$request->email,
                 'region_id'=>$request->region_id,
                 'password' => Hash::make($request->password),
