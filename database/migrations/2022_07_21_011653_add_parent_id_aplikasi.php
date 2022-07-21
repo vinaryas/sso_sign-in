@@ -13,7 +13,9 @@ class AddParentIdAplikasi extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('aplikasi', function (Blueprint $table) {
+            $table->integer('parent_id')->after('id');
+        });
     }
 
     /**
@@ -23,6 +25,8 @@ class AddParentIdAplikasi extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('aplikasi', function (Blueprint $table) {
+            $table->removeColumn('parent_id');
+        });
     }
 }
