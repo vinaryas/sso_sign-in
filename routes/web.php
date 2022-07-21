@@ -22,30 +22,30 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/user', [UserController::class, 'index'])->name('user.index');
-Route::post('/user', [UserController::class, 'store'])->name('user.store');
+Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user.index');
+Route::post('/user', [App\Http\Controllers\UserController::class, 'store'])->name('user.store');
 
-Route::get('/role', [RoleController::class, 'index'])->name('role.index');
-Route::post('/role', [RoleController::class ,'store'])->name('role.store');
+Route::get('/role', [App\Http\Controllers\RoleController::class, 'index'])->name('role.index');
+Route::post('/role', [App\Http\Controllers\RoleController::class ,'store'])->name('role.store');
 
-Route::get('/region', [RegionController::class, 'index'])->name('region.index');
-Route::post('/region', [RegionController::class, 'store'])->name('region.store');
+Route::get('/region', [App\Http\Controllers\RegionController::class, 'index'])->name('region.index');
+Route::post('/region', [App\Http\Controllers\RegionController::class, 'store'])->name('region.store');
 
-Route::get('/permission', [PermissionController::class, 'index'])->name('permission.index');
-Route::post('/permission', [PermissionController::class, 'store'])->name('permission.store');
+Route::get('/permission', [App\Http\Controllers\PermissionController::class, 'index'])->name('permission.index');
+Route::post('/permission', [App\Http\Controllers\PermissionController::class, 'store'])->name('permission.store');
 
-Route::get('/permission_role', [PermissionRoleController::class, 'index'])->name('permission_role.index');
-Route::post('/permission_role', [PermissionRoleController::class, 'store'])->name('permission_role.store');
+Route::get('/permission_role', [App\Http\Controllers\PermissionRoleController::class, 'index'])->name('permission_role.index');
+Route::post('/permission_role', [App\Http\Controllers\PermissionRoleController::class, 'store'])->name('permission_role.store');
 
-Route::get('/store', [StoreController::class, 'index'])->name('store.index');
-Route::post('/store', [StoreController::class, 'store'])->name('store.store');
+Route::get('/store', [App\Http\Controllers\StoreController::class, 'index'])->name('store.index');
+Route::post('/store', [App\Http\Controllers\StoreController::class, 'store'])->name('store.store');
 
-Route::get('/role_user', [RoleUserController::class, 'index'])->name('role_user.index');
-Route::post('/role_user', [RoleUserController::class, 'store'])->name('role_user.store');
+Route::get('/role_user', [App\Http\Controllers\RoleUserController::class, 'index'])->name('role_user.index');
+Route::post('/role_user', [App\Http\Controllers\RoleUserController::class, 'store'])->name('role_user.store');
 
-Route::get('/aplikasi', [AplikasiController::class, 'index'])->name('aplikasi.index');
-Route::post('/aplikasi', [AplikasiController::class, 'store'])->name('aplikasi.store');
+Route::get('/aplikasi', [App\Http\Controllers\AplikasiController::class, 'index'])->name('aplikasi.index');
+Route::post('/aplikasi', [App\Http\Controllers\AplikasiController::class, 'store'])->name('aplikasi.store');
 
-Route::get('/user_store', [userStoreController::class, 'index'])->name('user_store.index');
-Route::post('/user_store', [userStoreController::class, 'store'])->name('user_store.store');
+Route::get('/user_store', [App\Http\Controllers\UserStoreController::class, 'index'])->name('user_store.index');
+Route::post('/user_store', [App\Http\Controllers\UserStoreController::class, 'store'])->name('user_store.store');
 
